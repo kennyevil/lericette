@@ -7,11 +7,18 @@
   </ul>
 
   <section class="top-bar-section">
-    <ul class="left">
-      <li class="divider"></li>
-      <li><a href="#">Log in</a></li>
-      <li class="divider"></li>
-      <li><a href="#">Sign up</a></li>
+    <ul class="right">
+      <% if user_signed_in? %>
+	<li class="divider"></li>
+	<li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+	<li class="divider"></li>
+	<li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+      <% else %>
+	<li class="divider"></li>
+	<li><%= link_to "Sign up", new_user_registration_path %></li>
+	<li class="divider"></li>
+	<li><%= link_to "Login", new_user_session_path %>
+      <% end %>
     </ul>
   </section>
 </nav>
