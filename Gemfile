@@ -32,6 +32,7 @@ group :doc do
 end
 
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'rails_12factor'
 
 # Use unicorn as the app server
 # gem 'unicorn'
