@@ -5,6 +5,12 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # User details. Since this site will share a database with my blog, it makes sense to use the same sign in model
+
+  field :username,	    :type => String
+  field :name,		    :type => String
+  field :admin,		    :type => Boolean, :default => false
+
   ## Database authenticatable
   field :email,              :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""

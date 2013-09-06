@@ -1,33 +1,30 @@
-<h1>Listing recipes</h1>
+<div class="row">
+  <div class="large-10 small-centered columns">
+    <h1>Recipes!</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Type</th>
-      <th>Instructions</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+	<% @recipes.each do |recipe| %>
+	<div class="row">
+  	  <div class="large-9 small-centered columns">
+    	    <h4><%= link_to recipe.title, recipe %>  by <%= recipe.author %></h4>
+  	  </div>
+	</div>
+	<div class="row">
+  	  <div class="small-9 small-centered columns">
+    	    <h6 class="subheader"><%= recipe.type %></h6>
+  	  </div>
+	</div>
+	<div class="row">
+ 	  <div class="small-9 small-centered columns">
+    	    <p><%= recipe.description %></p>
+	  </div>
+	</div>
+	<% end %>
 
-  <tbody>
-    <% @recipes.each do |recipe| %>
-      <tr>
-        <td><%= recipe.title %></td>
-        <td><%= recipe.author %></td>
-        <td><%= recipe.type %></td>
-        <td><%= recipe.instructions %></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div class="row">
+      <div class="small-8 small-centered columns">
+      <%= button_to 'New Recipe', new_recipe_path, class: 'button' %>
+      </div>
+    </div>
 
-<br>
-
-<%= link_to 'New Recipe', new_recipe_path %>
+  </div>
+</div>

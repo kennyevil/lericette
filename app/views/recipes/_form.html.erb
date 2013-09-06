@@ -10,24 +10,31 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+<div class="row">
+  <div class="small-11 small-centered columns">
+<fieldset>
+  <legend>New Recipe</legend>
+  <div class="row">
+    <div class="small-11 small-centered columns">
+      <div class="row">
+        <%= f.text_field :title %>
+      </div>
+      <div class="row">
+        <%= f.text_field :author %>
+      </div>
+      <div class="row">
+        <%= f.text_field :type %>
+      </div>
+      <div class="row">
+        <%= f.text_area :description %>
+      </div>
+      <div class="row">
+        <%= f.text_area :instructions %>
+      </div>
+      <%= f.submit "Create recipe" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :author %><br>
-    <%= f.text_field :author %>
-  </div>
-  <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %>
-  </div>
-  <div class="field">
-    <%= f.label :instructions %><br>
-    <%= f.text_field :instructions %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</fieldset>
+</div>
+</div>
 <% end %>

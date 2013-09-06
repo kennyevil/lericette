@@ -1,7 +1,13 @@
 class Recipe
   include Mongoid::Document
-  field :title, type: String
-  field :author, type: String
-  field :type, type: String
-  field :instructions, type: String
+  include Mongoid::Timestamps
+
+  field :title
+  field :author
+  field :type
+  field :description
+  field :instructions
+  field :_id, type: String, default: ->{ title.to_s.parameterize }
+
+  index({title:1})
 end
