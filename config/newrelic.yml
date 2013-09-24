@@ -2,7 +2,7 @@ common: &default_settings
 
 #============================License key====================================
 
-  license_key: '2bec573e0a007b6e5d11213de0d38a21cc30ffd'
+  license_key: '2bec573e0a007b6e5d11213de0d38a216cc30ffd'
 
   app_name: Le Ricette
 
