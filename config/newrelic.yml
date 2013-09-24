@@ -30,7 +30,7 @@ common: &default_settings
 
     transaction_threshold: apdex_f
 
-    record_sql: obfuscated
+    record_sql: off
 
     stack_trace_threshold: 0.500
 
